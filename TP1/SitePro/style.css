@@ -55,3 +55,7 @@ ul {
     background:black url(images/noir-2.png) repeat-x;
     color:white;
     }  
+#currentpage{
+    color: #FF0000;
+
+}
