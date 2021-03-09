@@ -1,5 +1,5 @@
 h1{
-    color: antiquewhite
+    color: blue;
 }
 p{
     color:black
@@ -9,7 +9,7 @@ footer{
 }
 .menu{
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: column wrap;
     align-items: center;
     justify-content: space-around;
     align-content: space-around;
@@ -18,43 +18,19 @@ footer{
     height: 200px;
     border: 2px solid blue;
     box-sizing: border-box;
-    margin: 20px 0px;
 }
 .ligne{
     flex-direction: row;
 }
 .element-flexible{
     flex: 1 1 50px;
-    width: 40%;
-    height: 40%;
     background-color: #0DA; /*Vert*/
+    width: 40%;
     border: 2px solid green;
     box-sizing: border-box;
     margin: 10px;
 }
-ul {
-    padding:0;
-    margin:0;
-    list-style-type:none;
-    }
-   li {
-    float:left; /*pour IE*/
-    border-left:1px solid black;
-    }
-   ul li a {
-    display:block;
-    float:left;   
-    width:100px;
-    line-height:50px; /*hauteur de l'image de fond*/
-    background:black url(images/noir-1.png) repeat-x;
-    color:#DCDCDC;
-    text-decoration:none;
-    text-align:center;
-    }
-   ul li a:hover {
-    background:black url(images/noir-2.png) repeat-x;
-    color:white;
-    }  
+
 #currentpage{
     color: #FF0000;
 
