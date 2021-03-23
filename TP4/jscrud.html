@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Table Test</h1>
+    <table class="table table-light" id="table">
+        <thead>
+            <tr>
+              <th scope="col">Nom</th>
+              <th scope="col">Prénom</th>
+              <th scope="col">Date de naissance</th>
+              <th scope="col">J'aime le cours Web</th>
+              <th scope="col">Remarques</th>
+              <th scope="col">CRUD</th>
+            </tr>
+          </thead>
+       
+    </table>
+    <br>
+    <br>
+    <br>
+    <br>
+    <form onsubmit="onFormSubmit();" autocomplete="off" id="submit">
+        <div class="form-group">
+            <label>Nom</label>
+            <input type="text" class="form-control" id="nom"  placeholder="Nom">
+        </div>
+        <div class="form-group">
+            <label>Prénom</label>
+            <input type="text" class="form-control" id="prenom"  placeholder="Prénom">
+        </div>
+        <div class="form-group"> 
+            <label class="control-label" for="date">Date de naissance</label>
+            <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+          </div>
+          <div class="form-group">
+            <label>J'aime le cours Web</label>
+            <input type="text" class="form-control" id="cours"  placeholder="oui/non">
+          </div>
+          <div class="form-group">
+            <label>Remarques</label>
+            <input type="text" class="form-control" id="remarques"  placeholder="">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <script>
+    function onFormSubmit() {
+    // prevent the form to be sent to the server
+    event.preventDefault();
+    let form = document.getElementById('form');
+    let nom = form.elements['nom'];
+    let prenom = form.elements['prenom'];
+    let date = form.elements['date'];
+    let cours = form.elements['cours'];
+    let remarques = form.elements['remarques'];
+    let table = document.getElementById('table');
+    var row = table.createElement("tr");
+    
+    }
+    </script>
+        
+</body>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</html>

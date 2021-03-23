@@ -1,5 +1,5 @@
 <?php
-function renderMenuToHTML($currentPageId) {
+function renderMenuToHTML($currentPageId,$currentlang) {
     // un tableau qui d\'efinit la structure du site
     $mymenu = array(
     // idPage titre
@@ -8,8 +8,21 @@ function renderMenuToHTML($currentPageId) {
     'projets' => array('Mes Projets'),
     'contact' => array('Contact')
     );
+    
     // ...
     echo "<nav class=\"navbar navbar-expand-lg bg-secondary text-uppercase fixed-top\" id=\"mainNav\">";
+    if($currentlang=='en'){
+        echo "<div class=\"boutonlangue\">";
+        echo "<a class=\"btn selected\" href=\"index.php?page=".$currentPageId."&lang=en\"> EN </a>";
+        echo "<a class=\"btn \" href=\"index.php?page=".$currentPageId."&lang=fr\"> FR </a>";
+        echo "</div>";
+    }
+    elseif($currentlang=='fr'){
+            echo "<div class=\"boutonlangue\">";
+            echo "<a class=\"btn \" href=\"index.php?page=".$currentPageId."&lang=en\"> EN</a>";
+            echo "<a class=\" btn selected\" href=\"index.php?page=".$currentPageId."&lang=fr\"> FR </a>";
+            echo "</div>";
+    }
     echo "<div class=\"container\">";
     echo "<a class=\"navbar-brand js-scroll-trigger\" href=\"index.php\">Mon Site</a>";
     echo "<button class=\"navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarResponsive\" aria-controls=\"navbarResponsive\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">";
@@ -25,7 +38,7 @@ function renderMenuToHTML($currentPageId) {
         if($pageId === $currentPageId)
             echo "selected " ;
         echo "nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger\"";
-        echo "href='$pageId.php'>$pageParameters[0]</a>";
+        echo "href=\"index.php?page=".$pageId."&lang=".$currentlang."\"'>$pageParameters[0]</a>";
         echo "</li>";
     }
     echo "</ul></div></div></nav>";
